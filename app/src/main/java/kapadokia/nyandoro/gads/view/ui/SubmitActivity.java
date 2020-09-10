@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.Objects;
+
 import kapadokia.nyandoro.gads.R;
 import kapadokia.nyandoro.gads.databinding.ActivitySubmitBinding;
 import kapadokia.nyandoro.gads.service.model.Project;
@@ -30,6 +32,7 @@ public class SubmitActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_submit);
 
         ToolBarSetup();
+
     }
 
     public void ToolBarSetup(){
