@@ -48,7 +48,7 @@ public class SubmitActivity extends AppCompatActivity {
 
 
     public void toSubmitAction(View view) {
-
+            showPromptDialogue();
     }
 
     public void handleSubmission(){
@@ -127,15 +127,17 @@ public class SubmitActivity extends AppCompatActivity {
 
         //setting the view of the builder to our custom view that we already inflated
         builder.setView(dialogView);
-        Button button = findViewById(R.id.buttonOk);
+        //finally creating the alert dialog and displaying it
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+        Button button = dialogView.findViewById(R.id.buttonOk);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 handleSubmission(); // handling submission
+                alertDialog.dismiss();
             }
         });
-        //finally creating the alert dialog and displaying it
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+
     }
 }
