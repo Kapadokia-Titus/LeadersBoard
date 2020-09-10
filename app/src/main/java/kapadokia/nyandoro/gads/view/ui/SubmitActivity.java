@@ -67,4 +67,9 @@ public class SubmitActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void backButtonPressed(View view) {
+        onBackPressed();
+        finish();
+    }
 }
