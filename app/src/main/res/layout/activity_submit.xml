@@ -26,7 +26,7 @@
                 android:layout_width="30dp"
                 android:layout_height="20dp"
                 android:layout_margin="@dimen/eight_dp"
-                android:background="@drawable/arrow_back" />
+                android:background="@drawable/button_back" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -37,7 +37,6 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:elevation="@dimen/eight_dp"
-            android:outlineAmbientShadowColor="@color/orange"
             app:cardElevation="@dimen/sixteen_dp"
             android:layout_height="wrap_content">
             <LinearLayout
