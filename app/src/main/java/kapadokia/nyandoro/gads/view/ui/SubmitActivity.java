@@ -1,5 +1,6 @@
 package kapadokia.nyandoro.gads.view.ui;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
@@ -10,7 +11,10 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -45,7 +49,9 @@ public class SubmitActivity extends AppCompatActivity {
 
     public void toSubmitAction(View view) {
 
+    }
 
+    public void handleSubmission(){
         String email  = binding.emailAddress.getText().toString().trim();
         String first_name  = binding.firstName.getText().toString().trim();
         String last_name  = binding.lastName.getText().toString().trim();
@@ -58,10 +64,11 @@ public class SubmitActivity extends AppCompatActivity {
             @Override
             public void onChanged(Integer integer) {
                 if (integer>=199 && integer<300){
-                    Toast.makeText(SubmitActivity.this, "Data sent successfully",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(SubmitActivity.this, "Data sent successfully",Toast.LENGTH_LONG).show();
+                    showSuccessDialogue();
                 }
                 else {
-                    Toast.makeText(SubmitActivity.this, "Failed to send",Toast.LENGTH_LONG).show();
+                    showFailedDialogue();
                 }
 
             }
@@ -71,5 +78,64 @@ public class SubmitActivity extends AppCompatActivity {
     public void backButtonPressed(View view) {
         onBackPressed();
         finish();
+    }
+
+    public void showSuccessDialogue(){
+
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        //then we will inflate the custom alert dialog xml that we created
+        View dialogView = LayoutInflater.from(this).inflate(R.layout.success_dialogue, viewGroup, false);
+
+
+        //Now we need an AlertDialog.Builder object
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        //setting the view of the builder to our custom view that we already inflated
+        builder.setView(dialogView);
+
+        //finally creating the alert dialog and displaying it
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void showFailedDialogue(){
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        //then we will inflate the custom alert dialog xml that we created
+        View dialogView = LayoutInflater.from(this).inflate(R.layout.failed_dialogue, viewGroup, false);
+
+
+        //Now we need an AlertDialog.Builder object
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        //setting the view of the builder to our custom view that we already inflated
+        builder.setView(dialogView);
+
+        //finally creating the alert dialog and displaying it
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+
+    public void showPromptDialogue(){
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        //then we will inflate the custom alert dialog xml that we created
+        View dialogView = LayoutInflater.from(this).inflate(R.layout.prompt_dialogue, viewGroup, false);
+
+
+        //Now we need an AlertDialog.Builder object
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        //setting the view of the builder to our custom view that we already inflated
+        builder.setView(dialogView);
+        Button button = findViewById(R.id.buttonOk);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleSubmission(); // handling submission
+            }
+        });
+        //finally creating the alert dialog and displaying it
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }
