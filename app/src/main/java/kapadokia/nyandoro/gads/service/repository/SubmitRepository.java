@@ -1,5 +1,7 @@
 package kapadokia.nyandoro.gads.service.repository;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
@@ -11,6 +13,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SubmitRepository {
+    private static final String TAG = "SubmitRepository";
 
     private GadsService gadsService;
     private static SubmitRepository submitRepository;
@@ -38,18 +41,23 @@ public class SubmitRepository {
 
         final MutableLiveData<Integer> projectSubmission = new MutableLiveData<>();
 
-        gadsService.submitProject(email, first_name, last_name, project_link).enqueue(new Callback<Project>() {
+        Log.d("value", "submitProject: values passed " + email + first_name+ last_name+project_link);
+        gadsService.submitProject(email, first_name, last_name, project_link).enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<Project> call, Response<Project> response) {
+            public void onResponse(Call<Void> call, Response<Void> response) {
+              if (!response.isSuccessful()){
+                  projectSubmission.setValue(response.code());
+                  Log.d("values", "onResponse: " + response.code());
+              }
                 projectSubmission.setValue(response.code());
+                Log.d("values", "onResponse: " + response.code());
             }
 
             @Override
-            public void onFailure(Call<Project> call, Throwable t) {
-                projectSubmission.setValue(t.hashCode());
+            public void onFailure(Call<Void> call, Throwable t) {
+
             }
         });
-
           return  projectSubmission;
     }
 }
