@@ -9,6 +9,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,6 +33,7 @@ import kapadokia.nyandoro.gads.viewmodel.SubmitProjectViewModel;
 public class SubmitActivity extends AppCompatActivity {
     private static final String TAG = "SubmitActivity";
     ActivitySubmitBinding binding;
+    Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +63,18 @@ public class SubmitActivity extends AppCompatActivity {
 
         Project project = new Project(email,first_name,last_name,projectLink);
 
+        ConnectivityManager cm =
+                (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+
+        if (!isConnected){
+            showFailedDialogue();
+        }else {
+
+
         final SubmitProjectViewModel submitProjectViewModel = ViewModelProviders.of(this).get(SubmitProjectViewModel.class);
         submitProjectViewModel.setSubmitProjectObservable(project).observe(this, new Observer<Integer>() {
             @Override
@@ -73,6 +89,7 @@ public class SubmitActivity extends AppCompatActivity {
 
             }
         });
+        }
     }
 
     public void backButtonPressed(View view) {

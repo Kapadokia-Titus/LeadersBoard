@@ -1,5 +1,9 @@
 package kapadokia.nyandoro.gads.service.repository;
 
+import android.app.Application;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
@@ -40,6 +44,7 @@ public class SubmitRepository {
     public LiveData<Integer> submitProject(String email, String first_name, String last_name, String project_link){
 
         final MutableLiveData<Integer> projectSubmission = new MutableLiveData<>();
+
 
         Log.d("value", "submitProject: values passed " + email + first_name+ last_name+project_link);
         gadsService.submitProject(email, first_name, last_name, project_link).enqueue(new Callback<Void>() {
