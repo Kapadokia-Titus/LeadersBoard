@@ -6,4 +6,6 @@
     <dimen name="item_horizontal_margin">8dp</dimen>
     <dimen name="thirty_dp">30dp</dimen>
     <dimen name="eight_sp">8sp</dimen>
+    <dimen name="twenty_four_sp">24sp</dimen>
+    <dimen name="twenty_sp">20sp</dimen>
 </resources>
