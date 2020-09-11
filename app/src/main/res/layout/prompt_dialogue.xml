@@ -11,9 +11,15 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+       <ImageView
+           android:layout_width="50dp"
+           android:layout_height="50dp"
+           android:src="@drawable/ic_baseline_cancel_24"
+           android:layout_gravity="end"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/twenty_four_sp"
             android:text="@string/are_you_sure"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
