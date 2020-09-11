@@ -21,6 +21,7 @@ This is a simple application made using MVVM architecture. The app handles GET r
     <img src="splash.jpg" width="250px" height="400px">
     <img src="hours.jpg" width="250px" height="400px">
     <img src="skill.jpg" width="250px" height="400px">
+    <img src="prompt.jpg" width="250px" height="400px">
     <img src="submit.jpg" width="250px" height="400px">
     <img src="fail.jpg" width="250px" height="400px">
     <img src="success.jpg" width="250px" height="400px">
