@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.ui.SubmitActivity"  android:theme="@style/SubmitTheme"/>
+        <activity android:name=".view.ui.SubmitActivity"/>
         <activity android:name=".view.ui.MainActivity"/>
     </application>
 

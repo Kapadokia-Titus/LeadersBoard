@@ -51,15 +51,16 @@ public class SubmitActivity extends AppCompatActivity {
     }
 
 
-    public void toSubmitAction(View view) {
-            showPromptDialogue();
+    public void onProjectSubmitAction(View view) {
+        showPromptDialogue();
     }
 
+
     public void handleSubmission(){
-        String email  = binding.emailAddress.getText().toString().trim();
+        String email  = binding.email.getText().toString().trim();
         String first_name  = binding.firstName.getText().toString().trim();
         String last_name  = binding.lastName.getText().toString().trim();
-        String projectLink  = binding.emailAddress.getText().toString().trim();
+        String projectLink  = binding.link.getText().toString().trim();
 
         Project project = new Project(email,first_name,last_name,projectLink);
 
@@ -157,4 +158,7 @@ public class SubmitActivity extends AppCompatActivity {
         });
 
     }
+
+
+
 }
