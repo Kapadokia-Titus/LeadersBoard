@@ -148,7 +148,7 @@ public class SubmitActivity extends AppCompatActivity {
         //finally creating the alert dialog and displaying it
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-        Button button = dialogView.findViewById(R.id.buttonOk);
+        Button button = dialogView.findViewById(R.id.button_ok);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
