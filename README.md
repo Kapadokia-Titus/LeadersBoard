@@ -17,10 +17,9 @@ This is a simple application made using MVVM architecture. The app handles GET r
 
 
 # Discover This App
-  The application interface include.
-
-            <img src="splash.jpg" width="250px" height="400px">
-            <img src="hours.jpg" width="250px" height="400px">
-            <img src="skill.jpg" width="250px" height="400px">
-            
+  The application interface include. <br/>
+  
+    <img src="splash.jpg" width="250px" height="400px">
+    <img src="hours.jpg" width="250px" height="400px">
+    <img src="skill.jpg" width="250px" height="400px">
 </div>
