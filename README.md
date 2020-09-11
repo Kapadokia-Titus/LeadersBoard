@@ -16,6 +16,6 @@ This is a simple application made using MVVM architecture.
 The app handles GET request and POST submission to a google form.
 # Discover This App
 
-<img src="hours.jpg" width="250px" height="400px"><br/>
-<img src="skill.jpg" width="250px" height="400px"><br/>
-<img src="splash.jpg" width="250px" height="400px"><br/>
+<img src="splash.jpg" width="250px" height="400px">
+<img src="hours.jpg" width="250px" height="400px">
+<img src="skill.jpg" width="250px" height="400px">
