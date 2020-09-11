@@ -2,6 +2,8 @@
 This is a simple application made using MVVM architecture. The app handles GET request and POST submission to a google form.
 
 # Main Dependencies
+
+ Use this dependencies. you can copy them and search to get the latest dependencies.
 {
        implementation 'com.squareup.retrofit2:retrofit:2.8.1'<br/>
        implementation 'com.squareup.retrofit2:converter-gson:2.8.1'<br/>
