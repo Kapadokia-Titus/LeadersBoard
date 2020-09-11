@@ -1,5 +1,5 @@
 # GADS LeadersBoard application that displays top learners in hours and the skill IQ.
-This is a simple application made using MVVM architecture.
+This is a simple application made using MVVM architecture. The app handles GET request and POST submission to a google form.
 
 # Main Dependencies
 {
@@ -13,16 +13,9 @@ This is a simple application made using MVVM architecture.
        implementation 'com.github.bumptech.glide:glide:4.11.0'
 }
 
-The app handles GET request and POST submission to a google form.
+
 # Discover This App
-<div class="row">
-    <div class="col-md-6">
-    <img src="splash.jpg" width="250px" height="400px">
-    </div>
-    <div  class="col-md-6">
-    <img src="hours.jpg" width="250px" height="400px">
-    </div  class="col-md-6">
-    <div  class="col-md-6">
+    <img src="splash.jpg" width="250px" height="400px"> <img src="hours.jpg" width="250px" height="400px">
+
     <img src="skill.jpg" width="250px" height="400px">
-    </div>
 </div>
